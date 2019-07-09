@@ -23,6 +23,7 @@ Things you may want to cover:
 
 * ...
 
+<<<<<<< Updated upstream
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -41,3 +42,7 @@ Things you may want to cover:
 
 ### Association
 belongs_to :users
+=======
+## users テーブル
+
+>>>>>>> Stashed changes
