@@ -29,11 +29,11 @@
         %div{class:"main-header__edit-btn"}Edit
     .chat__contents
       .chat__contents__content
-        %div.chat__contents__content__user ユーザー名
-        %div.chat__contents__content__timestamp 2019/07/13(Sat) 12:19:14
+        .chat__contents__content__user ユーザー名
+        .chat__contents__content__timestamp 2019/07/13(Sat) 12:19:14
 
 
-      %div.message-text コメント
+      .message-text コメント
 
 
     .form
@@ -41,5 +41,5 @@
         %input.form__box__message{placeholder: "type a message"}
         %label.form__box__label
           = fa_icon 'image', class: 'icon fa-lg'
-          %input{type:"file",style:"display:none;",id:"upload-icon"}
+          %input{type:"file",id:"upload-icon"}
       %input{class:"form__submit-btn",value:"Send"}
