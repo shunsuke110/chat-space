@@ -49,45 +49,45 @@
       padding-top: 80px;
       padding-bottom: 20px;
       &__user {
-          float: left;
-          padding-right: 10px;
-          font-size: 16px;
-          font-weight: bold;
+        float: left;
+        padding-right: 10px;
+        font-size: 16px;
+        font-weight: bold;
         }
       &__timestamp {
-          float: left;
-          margin-left: 10px;
-          font-size: 12px;
-          color: $light-glay;
+        float: left;
+        margin-left: 10px;
+        font-size: 12px;
+        color: $light-glay;
         }
       }
     }
   }
 
-        .message-text {
-        color: #434a54;
-        font-size: 14px;
-        margin-top:10px;
-        display:block;
-        }
+          .message-text {
+            color: #434a54;
+            font-size: 14px;
+            margin-top:10px;
+            display:block;
+            }
 
-  .form {
-    height: 60px;
-    padding: 20px;
-    background-color: #ddd;
-    &__box {
+.form {
+  height: 60px;
+  padding: 20px;
+  background-color: #ddd;
+  &__box {
+    height: 50px;
+    width: 960px;
+    padding: 0 10px 0 10px;
+    color: #434a54;
+    border-style: none;
+    background-color: #fff;
+    float: left;
+    display: flex;
+    &__message {
       height: 50px;
-      width: 960px;
-      padding: 0 10px 0 10px;
-      color: #434a54;
+      width: 800px;
       border-style: none;
-      background-color: #fff;
-      float: left;
-      display: flex;
-      &__message {
-        height: 50px;
-        width: 800px;
-        border-style: none;
       }
       &__label {
         background-color: #fff;
@@ -98,15 +98,15 @@
         display:none;
       }
     }
-    &__submit-btn {
-      width: 40px;
-      height: 50px;
-      padding: 0 30px;
-      margin-left: 15px;
-      background-color: #38aef0;
-      color: white;
-      cursor: pointer;
-      float: right;
-      border-style: none;
+      &__submit-btn {
+        width: 40px;
+        height: 50px;
+        padding: 0 30px;
+        margin-left: 15px;
+        background-color: #38aef0;
+        color: white;
+        cursor: pointer;
+        float: right;
+        border-style: none;
     }
   }
