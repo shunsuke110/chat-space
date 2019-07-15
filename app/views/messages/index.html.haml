@@ -1,12 +1,15 @@
 .container
   .nav
     .nav__name
-      .nav__name__user
-        ユーザー名
+      %h3.nav__name__user
+        = current_user.name
         .nav__name__user__lists
           .nav__name__user__lists__menu
-          %i.fa.fa-pencil-square-o
-          %i.fa.fa-cog
+            = link_to do
+              %i.fa.fa-pencil-square-o
+            = link_to edit_user_path(current_user) do
+              %i.fa.fa-cog
+
 
     .nav__room
       .nav__room__box
