@@ -5,7 +5,7 @@
         = current_user.name
         .nav__name__user__lists
           .nav__name__user__lists__menu
-            = link_to do
+            = link_to new_group_path do
               %i.fa.fa-pencil-square-o
             = link_to edit_user_path(current_user) do
               %i.fa.fa-cog
@@ -13,8 +13,8 @@
 
     .nav__room
       .nav__room__box
+      メッセージはまだありません。
       %p.nav__room__name
-        グループ名
       %p.nav__room__comment
         ラストメッセージ
 
