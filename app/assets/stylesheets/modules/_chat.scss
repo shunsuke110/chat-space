@@ -23,7 +23,7 @@
     }
     &-right {
       float: right;
-      .main-header__edit-btn {
+      a.btn {
         display: block;
         text-decoration: none;
         height:40px;
@@ -70,43 +70,80 @@
             margin-top:10px;
             display:block;
             }
-
 .form {
-  height: 60px;
-  padding: 20px;
-  background-color: #ddd;
-  &__box {
-    height: 50px;
-    width: 960px;
-    padding: 0 10px 0 10px;
-    color: #434a54;
-    border-style: none;
-    background-color: #fff;
+  background-color: #DDDDDD;
+  box-sizing: border-box;
+  height: 90px;
+  padding: 20px 50px 20px 40px;
+  &__message {
+    border: none;
     float: left;
-    display: flex;
-    &__message {
-      height: 50px;
-      width: 800px;
-      border-style: none;
+    height: 50px;
+    width: calc(100% - 150px);
+  }
+  &__mask {
+    background-color: $white;
+    float: left;
+    height: 50px;
+    width: calc(100% - 100px);
+    padding-right: 10px;
+    &__image {
+      float: right;
+      font-size: 20px;
+      line-height: 50px;
+      .hidden {
+      display: none;
       }
-      &__label {
-        background-color: #fff;
-        height: 30px;
-        width: 30px;
-        margin: 12px 0 0 140px;
-        cursor: pointer;
-        display:none;
-      }
-    }
-      &__submit-btn {
-        width: 40px;
-        height: 50px;
-        padding: 0 30px;
-        margin-left: 15px;
-        background-color: #38aef0;
-        color: white;
-        cursor: pointer;
-        float: right;
-        border-style: none;
     }
   }
+  &__submit {
+    position: absolute;
+    background-color: $light_blue;
+    border: none;
+    color: $white;
+    float: right;
+    font-size: 16px;
+    height: 50px;
+    margin-left: 15px;
+    padding: 0 30px;
+    }
+  }
+// .form {
+//   height: 60px;
+//   padding: 20px;
+//   background-color: #ddd;
+//   &__box {
+//     height: 50px;
+//     width: 960px;
+//     padding: 0 10px 0 10px;
+//     color: #434a54;
+//     border-style: none;
+//     background-color: #fff;
+//     float: left;
+//     display: flex;
+//     &__message {
+//       height: 50px;
+//       width: 800px;
+//       border-style: none;
+//       }
+//       &__label {
+//         background-color: #fff;
+//         height: 30px;
+//         width: 30px;
+//         margin: 12px 0 0 140px;
+//         cursor: pointer;
+//         display:none;
+//       }
+//     }
+//       &__submit-btn {
+//         width: 40px;
+//         height: 50px;
+//         padding: 0 30px;
+//         margin-left: 15px;
+//         background-color: #38aef0;
+//         color: white;
+//         cursor: pointer;
+//         float: right;
+//         border-style: none;
+//     }
+//   }
