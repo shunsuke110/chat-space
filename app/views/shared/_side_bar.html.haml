@@ -15,7 +15,7 @@
       - current_user.groups.each do |group|
         .nav__room__box
           = link_to group_messages_path(group) do
-            .nav__room__name
+            .nav__room__box__name
               = group.name
-            .nav__room__comment
-              メッセージはまだありません。
+            .nav__room__box__comment
+              = group.show_last_message

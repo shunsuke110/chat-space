@@ -4,19 +4,20 @@
       %h3.nav__name__user
         = current_user.name
         .nav__name__user__lists
-          .nav__name__user__lists__menu
-            = link_to new_group_path do
-              %i.fa.fa-pencil-square-o
-            = link_to edit_user_path(current_user) do
-              %i.fa.fa-cog
-
+          = link_to new_group_path do
+            %i.fa.fa-pencil-square-o
+        .nav__name__user__menu
+          = link_to edit_user_path(current_user) do
+            %i.fa.fa-cog
 
     .nav__room
-      .nav__room__box
-      メッセージはまだありません。
-      %p.nav__room__name
-      %p.nav__room__comment
-        ラストメッセージ
+      - current_user.groups.each do |group|
+        .nav__room__box
+          = link_to group_messages_path(group) do
+            .nav__room__box__name
+              = group.name
+            .nav__room__box__comment
+              = group.show_last_message
 
 
   .chat
@@ -29,8 +30,10 @@
           %p
           Members:
       .chat__info-right
-        %div{class:"main-header__edit-btn"}Edit
+        = link_to 'Edit', edit_group_path(@group.id), class: "btn"
+
     .chat__contents
+      = render @messages
       .chat__contents__content
         .chat__contents__content__user ユーザー名
         .chat__contents__content__timestamp 2019/07/13(Sat) 12:19:14
@@ -38,11 +41,11 @@
 
       .message-text コメント
 
-
     .form
-      .form__box
-        %input.form__box__message{placeholder: "type a message"}
-        %label.form__box__label
-          = fa_icon 'image', class: 'icon fa-lg'
-          %input{type:"file",id:"upload-icon"}
-      %input{class:"form__submit-btn",value:"Send"}
+      = form_for [@group, @message] do |f|
+        .form__mask
+          = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
