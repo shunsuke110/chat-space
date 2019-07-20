@@ -24,12 +24,12 @@
     .chat__info
       .chat__info-left
         .chat__info-left__name
-          %p
-          チャット中グループ名
+          = @group.name
         .chat__info-left__members
-          %p
           Members:
-      .chat__info-right
+          - @group.users.each do |user|
+            = user.name
+      .chat__info__right
         = link_to 'Edit', edit_group_path(@group.id), class: "btn"
 
     .chat__contents
