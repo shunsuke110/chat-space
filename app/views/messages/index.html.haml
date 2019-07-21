@@ -34,12 +34,12 @@
 
     .chat__contents
       = render @messages
-      .chat__contents__content
-        .chat__contents__content__user ユーザー名
-        .chat__contents__content__timestamp 2019/07/13(Sat) 12:19:14
+      -# .chat__contents__content
+      -#   .chat__contents__content__user
+      -#   .chat__contents__content__timestamp
 
 
-      .message-text コメント
+      -# .message-text
 
     .form
       = form_for [@group, @message] do |f|

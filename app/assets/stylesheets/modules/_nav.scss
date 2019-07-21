@@ -1,3 +1,7 @@
+*{
+  text-decoration: none;
+}
+
 .nav {
   color:$white;
   float: left;
@@ -22,10 +26,10 @@
         &__lists{
           width: 30px;
           height: 20px;
-          margin-left: 150px;
+          margin-left: 140px;
           color:white;
         &__menu{
-          padding-right: 40px;
+          padding-right: 70px;
           color:white;
         }
       }
