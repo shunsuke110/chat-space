@@ -1,12 +1,5 @@
 $(document).on('turbolinks:load', function() {
   function buildHTML(message) {
-      // var insertImage = '';
-      // if (message.image.url) {
-      //     insertImage = `<img src="${message.image.url}">`;
-      // }
-      // var insertImage = (message.image)? `<image class="lower-message__image" src="${message.image}">`:"";
-      // var image = ""
-      // message.image ? image = `<img src="${message.image}">` : image = ""
 
       var image = (message.image.url) ? `<img class="lower-message__image" src="${message.image.url}">`:"";
 
@@ -29,8 +22,6 @@ $(document).on('turbolinks:load', function() {
       return html;
   }
   function scroll_view() {
-    // $('.messages').animate({ scrollTop: $(".messages")[0].scrollHeight }, 'fast');
-    // $('.chat__contents').animate({ scrollTop: $(".chat__contents")[0].scrollHeight }, 'fast');
   }
 
 
@@ -47,14 +38,11 @@ $(document).on('turbolinks:load', function() {
           processData: false,
           contentType: false
       })
-      .done(function (data) {
-        var html = buildHTML(data);
+      .done(function (messages) {
+        var html = buildHTML(messages);
         $('.chat__contents').append(html);
-        // scroll_view()
         $('#message_content').val("");
         $('#new_message')[0].reset();
-        // $('.form').val("");
-        // $('.form__textfield').val('');
         $('.form__submit').prop('disabled', false);
         $('.chat__contents').animate({ scrollTop: $(".chat__contents")[0].scrollHeight }, 'fast');
     })
@@ -62,5 +50,4 @@ $(document).on('turbolinks:load', function() {
         alert('エラーが発生したためメッセージは送信できませんでした。');
     });
   })
-  // return false;
 });
