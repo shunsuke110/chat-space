@@ -16,13 +16,6 @@
       %label.chat-group-form__label{for: "chat_group_チャットメンバー"} チャットメンバー
     .chat-group-form__field--right
     = f.collection_check_boxes :user_ids, User.all, :id, :name
-  -# .chat-group-form__field.clearfix
-  -#   .chat-group-form__field--left
-  -#     = f.label :チャットメンバーを追加, class: 'chat-group-form__label'
-  -#   .chat-group-form__field--right
-  -#     .chat-group-form__search.clearfix
-  -#       = f.text_field :id, class: 'chat-group-form__input', id: 'user-search-field', placeholder: '追加したいユーザー名を入力してください'
-  -#     .user-search-result
 
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
