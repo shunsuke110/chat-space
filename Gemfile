@@ -61,3 +61,6 @@ gem 'font-awesome-rails'
 gem 'devise'
 gem 'pry-rails'
 gem 'carrierwave'
+group :production do
+  gem 'unicorn', '5.4.1'
+end
