@@ -23,7 +23,7 @@
   .chat
     .chat__info
       .chat__info-left
-        .chat__info-left__name
+        .chat__info-left__name{"data-id": "#{@group.id}"}
           = @group.name
         .chat__info-left__members
           Members:
