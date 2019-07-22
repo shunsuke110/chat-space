@@ -2,21 +2,21 @@ $(document).on('turbolinks:load', function() {
   function buildHTML(message) {
       var image = (message.image.url) ? `<img class="lower-message__image" src="${message.image.url}">`:"";
       var html =`<div class="chat__contents__content" data-message-id=${message.id}>
-      <div class="chat__contents__content-top">
-      <div class="chat__contents__content-top__user">
-        ${message.user_name}
-      </div>
-      <div class="chat__contents__content-top__timestamp">
-        ${message.created_at}
-      </div>
-      <div class="chat__contents__content-top__text">
-      <p class="chat__contents__content-top__image">
-        ${message.content}
-      </p>
-      ${image}
-      </div>
-      </div>
-      </div>`;
+                  <div class="chat__contents__content-top">
+                    <div class="chat__contents__content-top__user">
+                      ${message.user_name}
+                    </div>
+                    <div class="chat__contents__content-top__timestamp">
+                      ${message.created_at}
+                    </div>
+                    <div class="chat__contents__content-top__text">
+                      <p class="chat__contents__content-top__image">
+                        ${message.content}
+                      </p>
+                      ${image}
+                    </div>
+                  </div>
+                </div>`;
       return html;
   }
   function scroll_view() {
@@ -51,15 +51,10 @@ $(document).on('turbolinks:load', function() {
 
         //自動更新
     var reloadMessages = setInterval(function() {
-      console.log("oreo_1")
       if (window.location.href.match(/\/groups\/\d+\/messages/)){
-        console.log("oreo_2")
-
         var last_message_id = $('.chat__contents__content:last').data('message-id')
         var group_id = $('.chat__info-left__name').data('id');
         var href = "/groups/" + group_id + "/api/messages";
-        console.log(href)
-        console.log("oreo_3")
         $.ajax({
           url: href,
           type: "GET",
@@ -67,12 +62,10 @@ $(document).on('turbolinks:load', function() {
           dataType: "json",
         })
         .done(function(messages) {
-          console.log(messages)
           messages.forEach(function(message) {
             var insertHTML = buildHTML(message)
             $('.chat__contents').append(insertHTML)
             $('.chat__contents').animate({scrollTop: $('.chat__contents')[0].scrollHeight}, 'fast');
-            console.log("oreo=ok")
           })
         })
           .fail(function(messages) {
@@ -80,7 +73,6 @@ $(document).on('turbolinks:load', function() {
             // console.log("自動更新失敗しました")
           });
         } else {
-          console.log("oreo_5")
             clearInterval(reloadMessages);
           }
     } , 5000 );
