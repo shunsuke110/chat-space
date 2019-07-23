@@ -1,6 +1,6 @@
 $(document).on('turbolinks:load', function() {
   function buildHTML(message) {
-      var image = (message.image.url) ? `<img class="lower-message__image" src="${message.image.url}">`:"";
+      var image = (message.image.url)? `<img class="lower-message__image" src="${message.image.url}">`:"";
       var html =`<div class="chat__contents__content" data-message-id=${message.id}>
                   <div class="chat__contents__content-top">
                     <div class="chat__contents__content-top__user">
