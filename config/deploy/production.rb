@@ -14,7 +14,7 @@ server '52.193.30.111',
   ssh_options: {
     port: 22,
     user: "ec2-user",
-    keys: %w(~/.shh/pochi.pem),
+    keys: %w(~/.ssh/pochi.pem),
     forward_agent: true
   }
 
