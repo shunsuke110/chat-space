@@ -17,3 +17,4 @@ pulic/uploads/*
 .byebug_history
 
 .Ds_Store
+config/secrets.yml
