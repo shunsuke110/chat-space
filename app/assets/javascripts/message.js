@@ -1,6 +1,8 @@
 $(document).on('turbolinks:load', function() {
   function buildHTML(message) {
-      var image = (message.image.url)? `<img class="lower-message__image" src="${message.image.url}">`:"";
+      var image = (message.image.url)? `<image class="lower-message__image" src="${message.image.url}">`:"";
+      // var image = (message.image.url)? `<image class="lower-message__image" src="${message.image.url}">`:"";
+      console.log(image)
       var html =`<div class="chat__contents__content" data-message-id=${message.id}>
                   <div class="chat__contents__content-top">
                     <div class="chat__contents__content-top__user">
@@ -17,6 +19,7 @@ $(document).on('turbolinks:load', function() {
                     ${image}
                   </div>
                 </div>`;
+                console.log(html)
       return html;
   }
   function scroll_view() {
@@ -24,10 +27,11 @@ $(document).on('turbolinks:load', function() {
 
   //メッセージ非同期
   $('#new_message').on('submit', function (e) {
+    console.log("oreo1")
       e.preventDefault();
       var formData = new FormData(this);
       var url = $(this).attr("action");
-
+      console.log("oreo2")
       $.ajax({
           url: url,
           type: "POST",
@@ -37,12 +41,14 @@ $(document).on('turbolinks:load', function() {
           contentType: false
       })
       .done(function (messages) {
+        console.log("oreo3")
         var html = buildHTML(messages);
         $('.chat__contents').append(html);
         $('#message_content').val("");
         $('#new_message')[0].reset();
         $('.form__submit').prop('disabled', false);
         $('.chat__contents').animate({ scrollTop: $(".chat__contents")[0].scrollHeight }, 'fast');
+        console.log("oreo4")
     })
     .fail(function () {
         alert('エラーが発生したためメッセージは送信できませんでした。');
