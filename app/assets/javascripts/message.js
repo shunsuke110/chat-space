@@ -1,6 +1,6 @@
 $(document).on('turbolinks:load', function() {
   function buildHTML(message) {
-      var image = (message.image)? `<img class="lower-message__image" src="${message.image}">`:"";
+      var image = (message.image.url)? `<img class="lower-message__image" src="${message.image.url}">`:"";
       var html =`<div class="chat__contents__content" data-message-id=${message.id}>
                   <div class="chat__contents__content-top">
                     <div class="chat__contents__content-top__user">
@@ -13,8 +13,8 @@ $(document).on('turbolinks:load', function() {
                       <p class="chat__contents__content-top__image">
                         ${message.content}
                       </p>
-                      ${image}
                     </div>
+                    ${image}
                   </div>
                 </div>`;
       return html;
