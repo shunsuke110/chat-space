@@ -66,7 +66,7 @@ gem 'font-awesome-rails'
 gem 'devise'
 gem 'pry-rails'
 gem 'carrierwave'
-gem 'fog-aws'
+gem 'fog-aws', group: :production
 group :production do
   gem 'unicorn', '5.4.1'
 end
