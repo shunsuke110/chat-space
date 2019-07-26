@@ -14,8 +14,8 @@ $(function() {
   function selectUserName(user_id, user_name) {
     var remove_html = `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
                           <input name='group[user_ids][]' type='hidden' value='${ user_id }'>
-                            <p class='chat-group-user__name'>${ user_name }</p>
-                            <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
+                          <p class='chat-group-user__name'>${ user_name }</p>
+                          <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
                       </div>`
       select_list.append(remove_html);
     }
