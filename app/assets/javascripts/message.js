@@ -31,7 +31,6 @@ $(function() {
       e.preventDefault();
       var formData = new FormData(this);
       var url = $(this).attr("action");
-      console.log("oreo2")
       $.ajax({
           url: url,
           type: "POST",
@@ -41,14 +40,12 @@ $(function() {
           contentType: false
       })
       .done(function (messages) {
-        console.log("oreo3")
         var html = buildHTML(messages);
         $('.chat__contents').append(html);
         $('#message_content').val("");
         $('#new_message')[0].reset();
         $('.form__submit').prop('disabled', false);
         $('.chat__contents').animate({ scrollTop: $(".chat__contents")[0].scrollHeight }, 'fast');
-        console.log("oreo4")
     })
     .fail(function () {
         alert('エラーが発生したためメッセージは送信できませんでした。');
